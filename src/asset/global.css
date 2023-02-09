@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: #3e3a39;
+  text-decoration: none;
+}
+
+
+body {
+  color: #3e3a39;
+  letter-spacing: -0.2px;
+}
+
+.point {
+  background-color: #0047ba;
+}
+.leaflet-control-container {
+  display: none;
+}
