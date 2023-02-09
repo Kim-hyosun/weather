@@ -1,0 +1,10 @@
+header{
+      display: flex; min-width: 1280px; height: 104px; align-items: center;
+  
+    .logo{display: flex; text-indent: -9999px; align-items: center;
+        .logo1{width:212px; height: 37px; background: url(../../asset/images/logo.png) no-repeat 0 /contain; margin-right:8px;}
+        .logo2{width:160px; height:37px; background: url(../../asset/images/logo_weather.png) no-repeat 0 /contain;}
+        }
+    
+    .homeBtn {margin-left: auto; padding:8px 10px; border: 1px solid #8c9091; font-size: 12px; height: 35px;}
+}

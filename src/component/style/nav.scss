@@ -1,0 +1,15 @@
+nav {
+  border: 1px solid #8c9091;
+  ul {
+    display: flex;
+      li{
+        font-size: 17px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 52px;
+        width: 142px;
+        height: 55px;
+        background: url(../../asset/images/menu_line.png) no-repeat 100% 50%;
+      }
+  }
+}

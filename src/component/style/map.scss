@@ -1,0 +1,163 @@
+.mapArea{
+  margin-top: 20px;
+    .map{
+      background-color: #ccebf8;
+      height: 740px;
+      padding-top: 30px;
+      position: relative;
+        .weather{
+          width: 50%;
+          height: 626px;
+          border-right: 1px solid #ffffff;
+          position: relative;
+          background: url(../../asset/images/map.png) no-repeat 0 /cover;
+        }
+        .dust{
+          width: 50%;
+          height: 626px;
+          position: absolute; top:30px; right:0;
+        }
+
+        .maptab{height: 70px; display: flex; justify-content: center; align-items: center; position:relative; z-index:999;
+          li{
+            a { 
+              border: 1px solid #8c9091;
+              color: #3e3a39;
+              font-size: 16px;
+              width:90px; height:36px;
+              background-color: #fff;
+              line-height: 36px;
+              text-align: center;
+              font-weight: 600;
+              &.active {
+                background-color: #0047ba;
+                color: #fff;
+                border:1px #0047ba solid;
+              }
+            }
+          }
+        }
+    }
+}
+
+
+
+:is(.mapArea .map) .weather, .dust{
+  .maptitle{
+          position: absolute;
+          top: 0px;
+          left: 25px;
+          width: 200px;
+          height: 54px;
+              .title{
+                 line-height: 22px;
+                 font-weight: 600;
+                 font-size: 22px;
+                 z-index: 998;
+               }
+              .titleDate{
+               .date{
+                 line-height: 30px;
+                 font-weight: 600;
+                 font-size: 20px;}
+               .time{
+                 line-height: 30px;
+                 font-weight: 500;
+                 font-size: 14px;}
+      }
+  }
+
+  .mapdata{
+    position:relative;
+    text-align: center;
+    line-height: 18px;
+    font-weight: 600;
+    font-size: 15px;
+    .wt1{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 75px;
+          left: 110px;
+        }
+    .wt2{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 90px;
+          left: 210px;
+        }
+    .wt3{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 40px;
+          left: 290px;
+        }
+    .wt4{
+         position: absolute;
+         width: 80px;
+         height: 110px;
+         top: 95px;
+         left: 370px;
+        }
+    .wt5{
+         position: absolute;
+         width: 80px;
+         height: 110px;
+         top: 85px;
+         left: 470px;
+        }
+    .wt6{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 200px;
+          left: 170px;
+        }
+    .wt7{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 190px;
+          left: 270px;
+        }
+    .wt8{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 250px;
+          left: 370px;
+      }
+    .wt9{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 305px;
+          left: 220px;
+        }
+    .wt10{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 355px;
+          left: 355px;
+         }
+    .wt11{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 390px;
+          left: 150px;
+         }
+    .wt12{
+          position: absolute;
+          width: 80px;
+          height: 110px;
+          top: 525px;
+          left: 185px;
+         }
+  }
+
+  .dustMap{transform: translate(-64px, -63px);}
+}
