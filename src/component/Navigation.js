@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Navigation() {
   const data = [
-    {id:1, content:"현재", url:'/'},
+    {id:1, content:"현재", url:'/weather'},
     {id:2, content:"오늘", url:'/today'},
     {id:3, content:"내일", url:'/tomorrow'},
     {id:4, content:"모래", url:'/more'},

@@ -12,7 +12,7 @@ function Map() {
     <div className="mapArea">
       <div className="map container">
       <Routes>
-        <Route path="/" element={<Current />} />
+        <Route path="/weather" element={<Current />} />
         <Route path="/today" element={<Today />} />
         <Route path="/tomorrow" element={<Tomorrow />} />
         <Route path="/more" element={<More />} />
