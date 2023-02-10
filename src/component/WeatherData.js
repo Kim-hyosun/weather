@@ -14,17 +14,22 @@ const weatherData = [
 ]
 
 
-function WeatherData() {
+function WeatherData({ Currentdata }) {
+  console.log(Currentdata)
+ 
   return (
     <div className="mapdata">
       {  
         weatherData.map((item)=><div key={item.id} className={item.class}>
-                                 <div>{item.title}</div>
+                                 <div className="title">{item.title}</div>
                                  <img src="#" alt="맑음" />        
-                                 <div>온도</div>
+                                 <div className="temp">온도</div>
                                 </div>
-          )
+        )
+        
       }
+   
+
     </div>
   );
 }

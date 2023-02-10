@@ -2,11 +2,11 @@
 import WeatherTitle from "./WeatherTitle";
 import WeatherData from "./WeatherData";
 
-function Weather({data}) {
+function Weather({data, Currentdata}) {
   return (
     <div className="weather">
-      <WeatherTitle data={data} />
-      <WeatherData />
+      <WeatherTitle Currentdata={Currentdata} />
+      <WeatherData Currentdata={Currentdata}/>
     </div>
   );
 }
