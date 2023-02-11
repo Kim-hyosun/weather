@@ -1,11 +1,17 @@
-import Dust from "./Dust";
-import Weather from "./Weather";
+import { Forecast, Airforecast } from "../asset/index";
+import TomorrowDust from "./TomorrowDust";
+import TomorrowWeather from "./TomorrowWeather";
+
+
 
 function Tomorrow() {
+  const data = Forecast();
+  const airforecast = Airforecast();
+  // console.log(airforecast)
   return (
     <>
-      <Weather />
-      <Dust />
+      <TomorrowWeather data={data} />
+      <TomorrowDust data={data} />
     </>
   );
 }

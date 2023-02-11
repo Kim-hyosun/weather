@@ -1,5 +1,5 @@
 
-function DustData() {
+function DustData({}) {
   return (
     <div className="dustMap">
       <svg pointerEvents="none" className="leaflet-zoom-animated" width="768" height="751" viewBox="-64 -63 768 751">

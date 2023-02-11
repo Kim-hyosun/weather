@@ -1,11 +1,15 @@
-import Dust from "./Dust";
-import Weather from "./Weather";
+import { Forecast } from "../asset/index";
+
+import MoreDust from "./MoreDust";
+import MoreWeather from "./MoreWeather";
 
 function More() {
+  const data = Forecast();
+  console.log(data)
   return (
     <>
-      <Weather />
-      <Dust />
+      <MoreWeather data={data} />
+      <MoreDust data={data} />
     </>
   );
 }

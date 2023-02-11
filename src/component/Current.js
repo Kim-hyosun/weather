@@ -1,15 +1,17 @@
-import { CurrentWeather } from "../asset/index";
+import { CurrentWeather, Air } from "../asset/index";
 
 import Dust from "./Dust";
 import Weather from "./Weather";
 
 function Current() {
   const Currentdata = CurrentWeather();
-  console.log(Currentdata);
+  const currentAir = Air();
+
+  console.log(currentAir)
   return (
     <>
       <Weather Currentdata={Currentdata} />
-      <Dust Currentdata={Currentdata} />
+      <Dust />
     </>
   );
 }

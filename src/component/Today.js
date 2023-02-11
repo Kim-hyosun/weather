@@ -1,13 +1,17 @@
-import Dust from "./Dust";
-import Weather from "./Weather";
+import { CurrentWeather } from "../asset/index";
 
-function today() {
+import TodayDust from "./TodayDust";
+import TodayWeather from "./TodayWeather";
+
+function Today() {
+  const Currentdata = CurrentWeather();
+  // console.log(Currentdata);
   return (
     <>
-      <Weather />
-      <Dust />
+      <TodayWeather Currentdata={Currentdata} />
+      <TodayDust Currentdata={Currentdata} />
     </>
   );
 }
 
-export default today;
+export default Today;
