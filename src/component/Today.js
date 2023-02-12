@@ -1,10 +1,10 @@
-import { CurrentWeather } from "../asset/index";
+import { Forecast } from "../asset/index";
 
 import TodayDust from "./TodayDust";
 import TodayWeather from "./TodayWeather";
 
 function Today() {
-  const Currentdata = CurrentWeather();
+  const Currentdata = Forecast();
   // console.log(Currentdata);
   return (
     <>

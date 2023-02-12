@@ -1,11 +1,11 @@
 import DustTitle from "./DustTitle";
 import DustData from "./DustData";
 
-function Dust({  }) {
+function Dust({ currentAir }) {
   return (
     <div className="dust">
       <DustTitle />
-      <DustData />
+      <DustData currentAir={currentAir} />
     </div>
   );
 }

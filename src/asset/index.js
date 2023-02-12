@@ -93,7 +93,8 @@ export const CurrentWeather = () => {  //현재 날씨
 }
 
 export const Air = () => {  //현재 미세먼지
-  const [air, setAir] = useState([]);
+  const [pollution, setPollution] = useState([]);
+  const [area1, setArea1] = useState(0)
 
   useEffect(() => {
 
@@ -124,15 +125,18 @@ export const Air = () => {  //현재 미세먼지
       .all(
         [axios.get(currentAir1), axios.get(currentAir2), axios.get(currentAir3), axios.get(currentAir4), axios.get(currentAir5), axios.get(currentAir6), axios.get(currentAir7), axios.get(currentAir8), axios.get(currentAir9), axios.get(currentAir10), axios.get(currentAir11), axios.get(currentAir12)])
       .then((values) => {
-        setAir(values)
-        console.log(values)
+        setPollution(values)
+        // console.log(values)
+        console.log(values[0].data.list[0].main.aqi)
+        setArea1(values[0].data.list[0].main.aqi)
       })
       .catch(err => {
         console.log(err)
       })
   }, []);
 
-  return air;
+  return area1;
+
 }
 
 export const Airforecast = () => {  //미세먼지 예보
