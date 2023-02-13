@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import Current from './Current'
-import Today from './Today'
-import Tomorrow from './Tomorrow'
-import More from './More'
+import Current from './current/Current'
+import Today from './today/Today'
+import Tomorrow from './tomorrow/Tomorrow'
+import More from './more/More'
 import "./style/map.scss"
 import Navigation from "./Navigation";
 
