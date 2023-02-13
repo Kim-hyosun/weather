@@ -246,3 +246,12 @@ svg path.air1 {
 .info:nth-child(3) span{background-color: yellow;}
 .info:nth-child(4) span{background-color: orange;}
 .info:nth-child(5) span{background-color: red;}
+
+
+@media screen and (max-width: 769px) {
+  .map{
+    .weather{}
+    .dust{}
+    .maptab{}
+  }
+}
