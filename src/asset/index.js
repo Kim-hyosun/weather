@@ -95,45 +95,45 @@ export const Air = () => {  //현재 미세먼지
 
   useEffect(() => {
 
-    const currentAir1 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
+    const currentAir1 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
 
-    const currentAir2 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
+    const currentAir2 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
 
-    const currentAir3 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
+    const currentAir3 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
 
-    const currentAir4 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
+    const currentAir4 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
 
-    const currentAir5 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
+    const currentAir5 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
 
-    const currentAir6 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
+    const currentAir6 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
 
-    const currentAir7 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
+    const currentAir7 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
 
-    const currentAir8 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
+    const currentAir8 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
 
-    const currentAir9 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
+    const currentAir9 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
 
-    const currentAir10 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
+    const currentAir10 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
 
-    const currentAir11 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
+    const currentAir11 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
 
-    const currentAir12 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+    const currentAir12 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
 
-    const currentAir13 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+    const currentAir13 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
 
-    const currentAir14 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+    const currentAir14 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
    
-    const currentAir15 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    const currentAir15 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
     
-    const currentAir16 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+    const currentAir16 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
    
-    const currentAir17 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    const currentAir17 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
     
-    const currentAir18 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    const currentAir18 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
     
-    const currentAir19 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    const currentAir19 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
     
-    const currentAir20 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+    const currentAir20 = `https://api.openweathermap.org/data/2.5/air_pollution?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
 
 
     Promise
@@ -178,45 +178,45 @@ export const Airforecast = () => {  //미세먼지 내일예보
 
   useEffect(() => {
 
-    const airtomorrow1 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
+    const airtomorrow1 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
 
-    const airtomorrow2 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
+    const airtomorrow2 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
 
-    const airtomorrow3 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
+    const airtomorrow3 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
 
-    const airtomorrow4 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
+    const airtomorrow4 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
 
-    const airtomorrow5 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
+    const airtomorrow5 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
 
-    const airtomorrow6 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
+    const airtomorrow6 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
 
-    const airtomorrow7 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
+    const airtomorrow7 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
 
-    const airtomorrow8 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
+    const airtomorrow8 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
 
-    const airtomorrow9 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
+    const airtomorrow9 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
 
-    const airtomorrow10 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
+    const airtomorrow10 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
 
-    const airtomorrow11 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
+    const airtomorrow11 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
 
-    const airtomorrow12 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+    const airtomorrow12 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
 
-    const airtomorrow13 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+    const airtomorrow13 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
 
-    const airtomorrow14 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+    const airtomorrow14 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
    
-    const airtomorrow15 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    const airtomorrow15 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
     
-    const airtomorrow16 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+    const airtomorrow16 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
    
-    const airtomorrow17 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    const airtomorrow17 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
     
-    const airtomorrow18 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    const airtomorrow18 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
     
-    const airtomorrow19 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    const airtomorrow19 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
     
-    const airtomorrow20 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+    const airtomorrow20 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
 
 
     Promise
@@ -259,45 +259,45 @@ export const AirforecastMore = () => {  //미세먼지 모레예보
 
   useEffect(() => {
 
-    const airtomorrow1 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
+    const airtomorrow1 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
 
-    const airtomorrow2 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
+    const airtomorrow2 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
 
-    const airtomorrow3 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
+    const airtomorrow3 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
 
-    const airtomorrow4 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
+    const airtomorrow4 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
 
-    const airtomorrow5 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
+    const airtomorrow5 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
 
-    const airtomorrow6 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
+    const airtomorrow6 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
 
-    const airtomorrow7 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
+    const airtomorrow7 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
 
-    const airtomorrow8 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
+    const airtomorrow8 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
 
-    const airtomorrow9 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
+    const airtomorrow9 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
 
-    const airtomorrow10 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
+    const airtomorrow10 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
 
-    const airtomorrow11 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
+    const airtomorrow11 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
 
-    const airtomorrow12 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+    const airtomorrow12 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
 
-    const airtomorrow13 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+    const airtomorrow13 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
 
-    const airtomorrow14 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+    const airtomorrow14 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
    
-    const airtomorrow15 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    const airtomorrow15 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
     
-    const airtomorrow16 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+    const airtomorrow16 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
    
-    const airtomorrow17 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    const airtomorrow17 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
     
-    const airtomorrow18 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    const airtomorrow18 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
     
-    const airtomorrow19 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    const airtomorrow19 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
     
-    const airtomorrow20 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+    const airtomorrow20 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
 
 
     Promise
