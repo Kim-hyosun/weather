@@ -36,7 +36,6 @@ export const Forecast = () => { //  날씨 예보
         [axios.get(Link1), axios.get(Link2), axios.get(Link3), axios.get(Link4), axios.get(Link5), axios.get(Link6), axios.get(Link7), axios.get(Link8), axios.get(Link9), axios.get(Link10), axios.get(Link11), axios.get(Link12)])
       .then((values) => {
         setData(values)
-        console.log(values)
       })
       .catch(err => {
         console.log(err)
@@ -44,8 +43,6 @@ export const Forecast = () => { //  날씨 예보
   }, []);
   return data;
 }
-
-
 
 export const CurrentWeather = () => {  //현재 날씨
   const [currentdata, setCurrentdata] = useState([]);
@@ -94,11 +91,11 @@ export const CurrentWeather = () => {  //현재 날씨
 
 export const Air = () => {  //현재 미세먼지
   const [pollution, setPollution] = useState([]);
-  const [area1, setArea1] = useState(0)
+  
 
   useEffect(() => {
 
-    const currentAir1 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도
+    const currentAir1 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
 
     const currentAir2 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
 
@@ -116,63 +113,219 @@ export const Air = () => {  //현재 미세먼지
 
     const currentAir9 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
 
-    const currentAir10 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상남도
+    const currentAir10 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
 
-    const currentAir11 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라남도
+    const currentAir11 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
 
     const currentAir12 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+
+    const currentAir13 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+
+    const currentAir14 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+   
+    const currentAir15 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    
+    const currentAir16 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+   
+    const currentAir17 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    
+    const currentAir18 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    
+    const currentAir19 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    
+    const currentAir20 = `http://api.openweathermap.org/data/2.5/air_pollution?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+
+
     Promise
       .all(
-        [axios.get(currentAir1), axios.get(currentAir2), axios.get(currentAir3), axios.get(currentAir4), axios.get(currentAir5), axios.get(currentAir6), axios.get(currentAir7), axios.get(currentAir8), axios.get(currentAir9), axios.get(currentAir10), axios.get(currentAir11), axios.get(currentAir12)])
+        [axios.get(currentAir1), axios.get(currentAir2), axios.get(currentAir3), axios.get(currentAir4), axios.get(currentAir5), axios.get(currentAir6), axios.get(currentAir7), axios.get(currentAir8), axios.get(currentAir9), axios.get(currentAir10), axios.get(currentAir11), axios.get(currentAir12), axios.get(currentAir13), axios.get(currentAir14), axios.get(currentAir15), axios.get(currentAir16), axios.get(currentAir17), axios.get(currentAir18), axios.get(currentAir19), axios.get(currentAir20)])
       .then((values) => {
-        setPollution(values)
+        // setPollution(values)
         // console.log(values)
-        console.log(values[0].data.list[0].main.aqi)
-        setArea1(values[0].data.list[0].main.aqi)
+        let aqi1 = values[0].data.list[0].main.aqi;
+        let aqi2 = values[1].data.list[0].main.aqi;
+        let aqi3 = values[2].data.list[0].main.aqi;
+        let aqi4 = values[3].data.list[0].main.aqi;
+        let aqi5 = values[4].data.list[0].main.aqi;
+        let aqi6 = values[5].data.list[0].main.aqi;
+        let aqi7 = values[6].data.list[0].main.aqi;
+        let aqi8 = values[7].data.list[0].main.aqi;
+        let aqi9 = values[8].data.list[0].main.aqi;
+        let aqi10 = values[9].data.list[0].main.aqi;
+        let aqi11 = values[10].data.list[0].main.aqi;
+        let aqi12 = values[11].data.list[0].main.aqi;
+        let aqi13 = values[12].data.list[0].main.aqi;
+        let aqi14 = values[13].data.list[0].main.aqi;
+        let aqi15 = values[14].data.list[0].main.aqi;
+        let aqi16 = values[15].data.list[0].main.aqi;
+        let aqi17 = values[16].data.list[0].main.aqi;
+        let aqi18 = values[17].data.list[0].main.aqi;
+        let aqi19 = values[18].data.list[0].main.aqi;
+        let aqi20 = values[19].data.list[0].main.aqi;
+        setPollution([aqi1,aqi2,aqi3,aqi4,aqi5,aqi6,aqi7,aqi8,aqi9,aqi10,aqi11,aqi12,aqi13,aqi14,aqi15,aqi16,aqi17,aqi18,aqi19,aqi20])
       })
       .catch(err => {
         console.log(err)
       })
   }, []);
 
-  return area1;
+  return pollution;
 
 }
 
-export const Airforecast = () => {  //미세먼지 예보
+export const Airforecast = () => {  //미세먼지 내일예보
   const [airforecast, setAirforecast] = useState([]);
 
   useEffect(() => {
 
-    const currentAir1 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도
+    const airtomorrow1 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
 
-    const currentAir2 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
+    const airtomorrow2 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
 
-    const currentAir3 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
+    const airtomorrow3 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
 
-    const currentAir4 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
+    const airtomorrow4 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
 
-    const currentAir5 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
+    const airtomorrow5 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
 
-    const currentAir6 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
+    const airtomorrow6 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
 
-    const currentAir7 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
+    const airtomorrow7 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
 
-    const currentAir8 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
+    const airtomorrow8 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
 
-    const currentAir9 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
+    const airtomorrow9 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
 
-    const currentAir10 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상남도
+    const airtomorrow10 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
 
-    const currentAir11 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라남도
+    const airtomorrow11 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
 
-    const currentAir12 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+    const airtomorrow12 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+
+    const airtomorrow13 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+
+    const airtomorrow14 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+   
+    const airtomorrow15 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    
+    const airtomorrow16 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+   
+    const airtomorrow17 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    
+    const airtomorrow18 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    
+    const airtomorrow19 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    
+    const airtomorrow20 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+
+
     Promise
       .all(
-        [axios.get(currentAir1), axios.get(currentAir2), axios.get(currentAir3), axios.get(currentAir4), axios.get(currentAir5), axios.get(currentAir6), axios.get(currentAir7), axios.get(currentAir8), axios.get(currentAir9), axios.get(currentAir10), axios.get(currentAir11), axios.get(currentAir12)])
-      .then((values) => {
-        setAirforecast(values)
-        console.log(values)
+        [axios.get(airtomorrow1), axios.get(airtomorrow2), axios.get(airtomorrow3), axios.get(airtomorrow4), axios.get(airtomorrow5), axios.get(airtomorrow6), axios.get(airtomorrow7), axios.get(airtomorrow8), axios.get(airtomorrow9), axios.get(airtomorrow10), axios.get(airtomorrow11), axios.get(airtomorrow12), axios.get(airtomorrow13), axios.get(airtomorrow14), axios.get(airtomorrow15), axios.get(airtomorrow16), axios.get(airtomorrow17), axios.get(airtomorrow18), axios.get(airtomorrow19), axios.get(airtomorrow20)])
+      .then((val) => {
+        let aqi1 = val[0].data.list[19].main.aqi;
+        let aqi2 = val[1].data.list[19].main.aqi;
+        let aqi3 = val[2].data.list[19].main.aqi;
+        let aqi4 = val[3].data.list[19].main.aqi;
+        let aqi5 = val[4].data.list[19].main.aqi;
+        let aqi6 = val[5].data.list[19].main.aqi;
+        let aqi7 = val[6].data.list[19].main.aqi;
+        let aqi8 = val[7].data.list[19].main.aqi;
+        let aqi9 = val[8].data.list[19].main.aqi;
+        let aqi10 = val[9].data.list[19].main.aqi;
+        let aqi11 = val[10].data.list[19].main.aqi;
+        let aqi12 = val[11].data.list[19].main.aqi;
+        let aqi13 = val[12].data.list[19].main.aqi;
+        let aqi14 = val[13].data.list[19].main.aqi;
+        let aqi15 = val[14].data.list[19].main.aqi;
+        let aqi16 = val[15].data.list[19].main.aqi;
+        let aqi17 = val[16].data.list[19].main.aqi;
+        let aqi18 = val[17].data.list[19].main.aqi;
+        let aqi19 = val[18].data.list[19].main.aqi;
+        let aqi20 = val[19].data.list[19].main.aqi;
+        
+        setAirforecast([aqi1,aqi2,aqi3,aqi4,aqi5,aqi6,aqi7,aqi8,aqi9,aqi10,aqi11,aqi12,aqi13,aqi14,aqi15,aqi16,aqi17,aqi18,aqi19,aqi20])
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, []);
+
+  return airforecast;
+}
+
+export const AirforecastMore = () => {  //미세먼지 모레예보
+  const [airforecast, setAirforecast] = useState([]);
+
+  useEffect(() => {
+
+    const airtomorrow1 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.71417&lon=26.45250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 서해5도;인천
+
+    const airtomorrow2 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.56667&lon=126.97806&appid=7d9433de9290a17c6ac5fde49cac3591`; //서울
+
+    const airtomorrow3 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.34167&lon=127.92083&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영서
+
+    const airtomorrow4 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.75000&lon=128.88333&appid=7d9433de9290a17c6ac5fde49cac3591`;//강원영동
+
+    const airtomorrow5 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.512899&lon=130.826678&appid=7d9433de9290a17c6ac5fde49cac3591`;//울릉독도
+
+    const airtomorrow6 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.78500&lon=126.45056&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청남도
+
+    const airtomorrow7 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.99278&lon=127.92611&appid=7d9433de9290a17c6ac5fde49cac3591`; //충청북도
+
+    const airtomorrow8 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.01944&lon=129.34167&appid=7d9433de9290a17c6ac5fde49cac3591`;//경상북도
+
+    const airtomorrow9 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.82500&lon=127.15000&appid=7d9433de9290a17c6ac5fde49cac3591`;//전라북도
+
+    const airtomorrow10 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.17944&lon=129.07556&appid=7d9433de9290a17c6ac5fde49cac3591`;//부산
+
+    const airtomorrow11 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.15972&lon=126.85306&appid=7d9433de9290a17c6ac5fde49cac3591`;//광주
+
+    const airtomorrow12 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=33.50000&lon=126.51667&appid=7d9433de9290a17c6ac5fde49cac3591`;//제주
+
+    const airtomorrow13 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.73889&lon=127.03444&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기북부;의정부
+
+    const airtomorrow14 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=37.26389&lon=127.02861&appid=7d9433de9290a17c6ac5fde49cac3591`;//경기남부; 수원
+   
+    const airtomorrow15 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.48750&lon=127.28167&appid=7d9433de9290a17c6ac5fde49cac3591`;// 세종시
+    
+    const airtomorrow16 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=36.35111&lon=127.38500&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대전
+   
+    const airtomorrow17 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=7d9433de9290a17c6ac5fde49cac3591`;// 전라남도 ; 순천시
+    
+    const airtomorrow18 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
+    
+    const airtomorrow19 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
+    
+    const airtomorrow20 = `http://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
+
+
+    Promise
+      .all(
+        [axios.get(airtomorrow1), axios.get(airtomorrow2), axios.get(airtomorrow3), axios.get(airtomorrow4), axios.get(airtomorrow5), axios.get(airtomorrow6), axios.get(airtomorrow7), axios.get(airtomorrow8), axios.get(airtomorrow9), axios.get(airtomorrow10), axios.get(airtomorrow11), axios.get(airtomorrow12), axios.get(airtomorrow13), axios.get(airtomorrow14), axios.get(airtomorrow15), axios.get(airtomorrow16), axios.get(airtomorrow17), axios.get(airtomorrow18), axios.get(airtomorrow19), axios.get(airtomorrow20)])
+      .then((val) => {
+        let aqi1 = val[0].data.list[38].main.aqi;
+        let aqi2 = val[1].data.list[38].main.aqi;
+        let aqi3 = val[2].data.list[38].main.aqi;
+        let aqi4 = val[3].data.list[38].main.aqi;
+        let aqi5 = val[4].data.list[38].main.aqi;
+        let aqi6 = val[5].data.list[38].main.aqi;
+        let aqi7 = val[6].data.list[38].main.aqi;
+        let aqi8 = val[7].data.list[38].main.aqi;
+        let aqi9 = val[8].data.list[38].main.aqi;
+        let aqi10 = val[9].data.list[38].main.aqi;
+        let aqi11 = val[10].data.list[38].main.aqi;
+        let aqi12 = val[11].data.list[38].main.aqi;
+        let aqi13 = val[12].data.list[38].main.aqi;
+        let aqi14 = val[13].data.list[38].main.aqi;
+        let aqi15 = val[14].data.list[38].main.aqi;
+        let aqi16 = val[15].data.list[38].main.aqi;
+        let aqi17 = val[16].data.list[38].main.aqi;
+        let aqi18 = val[17].data.list[38].main.aqi;
+        let aqi19 = val[18].data.list[38].main.aqi;
+        let aqi20 = val[19].data.list[38].main.aqi;
+        
+        setAirforecast([aqi1,aqi2,aqi3,aqi4,aqi5,aqi6,aqi7,aqi8,aqi9,aqi10,aqi11,aqi12,aqi13,aqi14,aqi15,aqi16,aqi17,aqi18,aqi19,aqi20])
       })
       .catch(err => {
         console.log(err)

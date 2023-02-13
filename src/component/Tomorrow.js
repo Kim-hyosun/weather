@@ -11,7 +11,7 @@ function Tomorrow() {
   return (
     <>
       <TomorrowWeather data={data} />
-      <TomorrowDust data={data} />
+      <TomorrowDust airforecast={airforecast} />
     </>
   );
 }

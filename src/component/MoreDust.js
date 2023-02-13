@@ -1,11 +1,11 @@
 import MoreDustdata from "./MoreDustdata";
 import MoreDustTitle from "./MoreDustTitle";
 
-function MoreDust() {
+function MoreDust({dustdata}) {
 	return (
 		<div className="dust">
 			<MoreDustTitle />
-			<MoreDustdata />
+			<MoreDustdata dustdata={dustdata} />
 		</div>
 	);
 }

@@ -90,9 +90,11 @@
   .mapdata {
     position: relative;
     text-align: center;
-    line-height: 18px;
+    line-height: 13px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
+    
+    .title{font-size: 13px; font-weight: 600; line-height: 10px;}
 
     .wt0 {
       position: absolute;

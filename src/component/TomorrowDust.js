@@ -1,11 +1,11 @@
 import TomorrowDustdata from "./TomorrowDustdata";
 import TomorrowDustTitle from "./TomorrowDustTitle";
 
-function TomorrowDust({ data }) {
+function TomorrowDust({ airforecast }) {
 	return (
 		<div className="dust">
 			<TomorrowDustTitle />
-			<TomorrowDustdata />
+			<TomorrowDustdata airforecast={airforecast} />
 		</div>
 	);
 }

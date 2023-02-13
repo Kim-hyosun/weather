@@ -1,11 +1,11 @@
 import TodayDustdata from "./TodayDustdata";
 import TodayDustTitle from "./TodayDustTitle";
 
-function TodayDust() {
+function TodayDust({currentAir}) {
 	return (
 		<div className="dust">
 			<TodayDustTitle />
-			<TodayDustdata />
+			<TodayDustdata currentAir={currentAir} />
 		</div>
 	);
 }
