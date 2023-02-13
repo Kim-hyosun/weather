@@ -94,7 +94,7 @@
     font-weight: 600;
     font-size: 14px;
     
-    .title{font-size: 13px; font-weight: 600; line-height: 10px;}
+    .title{font-size: 14px; font-weight: 600; line-height: 2px;}
 
     .wt0 {
       position: absolute;
@@ -222,3 +222,27 @@ svg path.air1 {
   fill-opacity: 1;
   fill: #44c7e5;
 }
+
+.mapArea .map .dust .dustInfo {
+  position: absolute;
+  bottom: 0;
+  right: 6px;
+
+  .info{
+        display: inline-block;
+        height: 15px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 8px;
+        span{
+          display: inline-block;
+          border-radius: 50%;
+          height: 15px; width:15px;
+        }
+}}
+
+.info:nth-child(1) span{background-color: #44c7e5;}
+.info:nth-child(2) span{background-color: yellowgreen;}
+.info:nth-child(3) span{background-color: yellow;}
+.info:nth-child(4) span{background-color: orange;}
+.info:nth-child(5) span{background-color: red;}

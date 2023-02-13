@@ -1,3 +1,4 @@
+import DustInfo from "./DustInfo";
 import TomorrowDustdata from "./TomorrowDustdata";
 import TomorrowDustTitle from "./TomorrowDustTitle";
 
@@ -6,6 +7,7 @@ function TomorrowDust({ airforecast }) {
 		<div className="dust">
 			<TomorrowDustTitle />
 			<TomorrowDustdata airforecast={airforecast} />
+			<DustInfo />
 		</div>
 	);
 }

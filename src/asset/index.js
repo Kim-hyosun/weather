@@ -44,7 +44,7 @@ export const Forecast = () => { //  날씨 예보
   return data;
 }
 
-export const CurrentWeather = () => {  //현재 날씨
+/* export const CurrentWeather = () => {  //현재 날씨
   const [currentdata, setCurrentdata] = useState([]);
 
   useEffect(() => {
@@ -87,7 +87,7 @@ export const CurrentWeather = () => {  //현재 날씨
 
 
   return currentdata;
-}
+} */
 
 export const Air = () => {  //현재 미세먼지
   const [pollution, setPollution] = useState([]);
@@ -293,11 +293,11 @@ export const AirforecastMore = () => {  //미세먼지 모레예보
    
     const airtomorrow17 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=34.95583&lon=127.49028&appid=038d154e9b9e548e27fb2ea1e227aded`;// 전라남도 ; 순천시
     
-    const airtomorrow18 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=038d154e9b9e548e27fb2ea1e227aded`;// 울산
+    const airtomorrow18 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.53889&lon=129.31667&appid=7d9433de9290a17c6ac5fde49cac3591`;// 울산
     
-    const airtomorrow19 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=038d154e9b9e548e27fb2ea1e227aded`;// 대구
+    const airtomorrow19 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.87222&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 대구
     
-    const airtomorrow20 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=038d154e9b9e548e27fb2ea1e227aded`;// 경상남도 ; 진주시
+    const airtomorrow20 = `https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=35.18083&lon=128.60250&appid=7d9433de9290a17c6ac5fde49cac3591`;// 경상남도 ; 진주시
 
 
     Promise

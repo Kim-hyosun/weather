@@ -1,3 +1,4 @@
+import DustInfo from "./DustInfo";
 import TodayDustdata from "./TodayDustdata";
 import TodayDustTitle from "./TodayDustTitle";
 
@@ -6,6 +7,7 @@ function TodayDust({currentAir}) {
 		<div className="dust">
 			<TodayDustTitle />
 			<TodayDustdata currentAir={currentAir} />
+			<DustInfo />
 		</div>
 	);
 }

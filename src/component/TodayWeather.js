@@ -1,11 +1,11 @@
 import TodayWeatherData from "./TodayWeatherData";
 import TodayWeatherTitle from "./TodayWeatherTitle";
 
-function TodayWeather({ Currentdata }) {
+function TodayWeather() {
 	return (
 		<div className="weather">
-			<TodayWeatherTitle Currentdata={Currentdata} />
-			<TodayWeatherData Currentdata={Currentdata} />
+			<TodayWeatherTitle />
+			<TodayWeatherData />
 		</div>
 	);
 }

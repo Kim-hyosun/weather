@@ -1,5 +1,5 @@
 
-function WeatherTitle({ Currentdata }) {
+function WeatherTitle() {
   return (
 
     <div className="maptitle">
