@@ -22,6 +22,19 @@ body {
 }
 
 .container {width: 1280px; margin: 0 auto;}
+@media only screen and (max-width: 1300px) {
+       #wrap{overflow-x:hidden}
+      .container{
+        max-width:1280px;
+        width:640px;
+      }
+    }
+
+@media only screen and (max-width: 640px) {
+    .container{
+      min-width: 200px;
+      max-width: 400px;}
+    }
 
 .point {
   background-color: #0047ba;

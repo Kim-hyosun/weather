@@ -11,9 +11,11 @@
   }
 }
 
-.mapArea {
-  margin-top: 20px;
 
+.mapArea {
+  width: 100%;
+  margin-top: 20px;
+  
   .map {
     background-color: #ccebf8;
     height: 740px;
@@ -21,8 +23,11 @@
     position: relative;
     @include responsiveWEB(mob) {
       height: 1480px;
-      padding-top:100px;
-      padding-bottom: 30px;
+      padding:100px 0 30px;
+      left:-2vw;
+    }
+    .container{
+      min-width:300px;
     }
 
     .weather {
@@ -33,10 +38,14 @@
       background: url(../../asset/images/map.png) no-repeat 0 /cover;
       @include responsiveWEB(mob) {
         border:none;
+        width:640px;
       }
       @include responsiveWEB(mobSize) {
-        width: 40%;
-        left:-60px;
+        width:640px;
+        left: -92px;
+        max-width: 475px;
+        background-position: -190% 50%;
+        background-size: 105%;
       }
     }
 
@@ -62,11 +71,12 @@
       z-index: 999;
       @include responsiveWEB(mob) {
         position:absolute;
-        top:10px; left:140px;
-        justify-content: flex-start;
+        top:10px; 
+        justify-content: center;
       }
       @include responsiveWEB(mobSize) {
-        top:10px; left:70px;
+        top:10px; left: 2vw;
+        justify-content: flex-start;
       }
 
 
@@ -82,6 +92,7 @@
           line-height: 36px;
           text-align: center;
           font-weight: 600;
+          
 
           &.active {
             background-color: #0047ba;
@@ -134,12 +145,29 @@
 
   .mapdata {
     position: relative;
+    left:0;
     text-align: center;
     line-height: 13px;
     font-weight: 600;
     font-size: 14px;
     
-    .title{font-size: 14px; font-weight: 600; line-height: 2px;}
+    @include responsiveWEB(mobSize) {
+      font-size: 13px;
+      left:4%;
+      line-height: 4px;
+    }
+    
+    .title{line-height: 2px;
+      @include responsiveWEB(mob) {
+        font-size: 13px;
+      }
+    }
+
+    .none{
+      @include responsiveWEB(mobSize) {
+        display: none;
+      }
+    }
 
     .wt0 {
       position: absolute;
@@ -147,6 +175,9 @@
       height: 110px;
       top: 75px;
       left: 110px;
+      @include responsiveWEB(mobSize) {
+        top:110px;
+      }
     }
 
     .wt1 {
@@ -155,6 +186,10 @@
       height: 110px;
       top: 90px;
       left: 210px;
+      @include responsiveWEB(mobSize) {
+        left: 180px;
+        top: 130px;
+      }
     }
 
     .wt2 {
@@ -163,6 +198,10 @@
       height: 110px;
       top: 40px;
       left: 290px;
+      @include responsiveWEB(mobSize) {
+        top: 90px;
+        left: 240px;
+      }
     }
 
     .wt3 {
@@ -171,6 +210,11 @@
       height: 110px;
       top: 95px;
       left: 370px;
+      @include responsiveWEB(mobSize) {
+        top: 140px;
+        left: 300px;
+      }
+     
     }
 
     .wt4 {
@@ -178,7 +222,10 @@
       width: 80px;
       height: 110px;
       top: 85px;
-      left: 470px;
+      left: 460px;
+      @include responsiveWEB(mob) {
+        display: none;
+      }
     }
 
     .wt5 {
@@ -187,6 +234,10 @@
       height: 110px;
       top: 200px;
       left: 170px;
+      @include responsiveWEB(mobSize) {
+        top: 240px;
+        left: 124px;
+      }
     }
 
     .wt6 {
@@ -195,6 +246,10 @@
       height: 110px;
       top: 190px;
       left: 270px;
+      @include responsiveWEB(mobSize) {
+        top: 200px;
+        left: 225px;
+      }
     }
 
     .wt7 {
@@ -203,6 +258,9 @@
       height: 110px;
       top: 250px;
       left: 370px;
+      @include responsiveWEB(mobSize) {
+        left: 308px;
+      }
     }
 
     .wt8 {
@@ -211,6 +269,9 @@
       height: 110px;
       top: 305px;
       left: 220px;
+      @include responsiveWEB(mobSize) {
+        left: 188px;
+      }
     }
 
     .wt9 {
@@ -219,6 +280,9 @@
       height: 110px;
       top: 355px;
       left: 355px;
+      @include responsiveWEB(mobSize) {
+        left: 274px;
+      }
     }
 
     .wt10 {
@@ -235,20 +299,29 @@
       height: 110px;
       top: 525px;
       left: 185px;
+      @include responsiveWEB(mobSize) {
+        top:490px;
+        left:165px;
+      }
     }
   }
 
   .dustMap {
     transform: translate(-64px, -63px);
     @include responsiveWEB(mobSize) {
-      transform: translate(-154px, -13px);
+      transform: translate(-154px, -13px)
+    }
+    svg{
+      @include responsiveWEB(mobSize) {
+        width:696px;
+      }
     }
   }
 }
 
 .mapArea .map .weather .maptitle {
   @include responsiveWEB(mobSize) {
-    left:100px;
+    left:110px;
   }
 }
 
@@ -281,7 +354,7 @@ svg path.air1 {
   bottom: 0;
   right: 6px;
   @include responsiveWEB(mobSize) {
-    right:160px;
+    left: 70px;
   }
 
   .info{

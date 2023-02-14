@@ -29,7 +29,7 @@ function WeatherDataInfo({ cities }) {
 				<>
 			<img src={`http://openweathermap.org/img/wn/${icon}.png`} alt={description} />
 			<div className="temp">{temp}℃</div>
-			<div style={{whiteSpace:'nowrap'}}>{description}</div>
+			<div className="none">{description}</div>
 				</>
 			)}
 		</>

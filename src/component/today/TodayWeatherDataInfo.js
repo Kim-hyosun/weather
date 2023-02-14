@@ -33,7 +33,7 @@ function TodayWeatherDataInfo({ cities }) {
 				<>
 				<img src={`http://openweathermap.org/img/wn/${icon ? icon: "loading"}.png`} alt={des} />
 					<div className="temp">{tempMin ? tempMin : "loading"}/{tempMax ? tempMax : "loading"}℃</div>
-					<div style={{whiteSpace:'nowrap'}}>(체감{feel ? feel : "loading"}℃)</div>
+					<div className="none" style={{whiteSpace:'nowrap'}}>(체감{feel ? feel : "loading"}℃)</div>
 					</>
 			)}
 		</>
