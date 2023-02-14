@@ -1,3 +1,16 @@
+@mixin responsiveWEB ($media) {
+  @if $media == mob {
+    @media only screen and (max-width: 1300px) {
+      @content;
+    }
+  }
+  @else if $media == mobSize {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  }
+}
+
 .mapArea {
   margin-top: 20px;
 
@@ -6,6 +19,11 @@
     height: 740px;
     padding-top: 30px;
     position: relative;
+    @include responsiveWEB(mob) {
+      height: 1480px;
+      padding-top:100px;
+      padding-bottom: 30px;
+    }
 
     .weather {
       width: 50%;
@@ -13,6 +31,13 @@
       border-right: 1px solid #ffffff;
       position: relative;
       background: url(../../asset/images/map.png) no-repeat 0 /cover;
+      @include responsiveWEB(mob) {
+        border:none;
+      }
+      @include responsiveWEB(mobSize) {
+        width: 40%;
+        left:-60px;
+      }
     }
 
     .dust {
@@ -21,6 +46,11 @@
       position: absolute;
       top: 30px;
       right: 0;
+      @include responsiveWEB(mob) {
+        position:relative;
+        margin-top:40px;
+        border-top:1px solid #ffffff;
+      }
     }
 
     .maptab {
@@ -30,6 +60,16 @@
       align-items: center;
       position: relative;
       z-index: 999;
+      @include responsiveWEB(mob) {
+        position:absolute;
+        top:10px; left:140px;
+        justify-content: flex-start;
+      }
+      @include responsiveWEB(mobSize) {
+        top:10px; left:70px;
+      }
+
+
 
       li {
         a {
@@ -64,6 +104,11 @@
     left: 25px;
     width: 200px;
     height: 54px;
+    @include responsiveWEB(mob) {
+      top: 20px;
+      left:50px;
+    }
+
 
     .title {
       line-height: 22px;
@@ -195,6 +240,15 @@
 
   .dustMap {
     transform: translate(-64px, -63px);
+    @include responsiveWEB(mobSize) {
+      transform: translate(-154px, -13px);
+    }
+  }
+}
+
+.mapArea .map .weather .maptitle {
+  @include responsiveWEB(mobSize) {
+    left:100px;
   }
 }
 
@@ -217,7 +271,6 @@ svg path.air2 {
   fill-opacity: 1;
   fill: yellowgreen;
 }
-
 svg path.air1 {
   fill-opacity: 1;
   fill: #44c7e5;
@@ -227,6 +280,9 @@ svg path.air1 {
   position: absolute;
   bottom: 0;
   right: 6px;
+  @include responsiveWEB(mobSize) {
+    right:160px;
+  }
 
   .info{
         display: inline-block;
@@ -247,11 +303,3 @@ svg path.air1 {
 .info:nth-child(4) span{background-color: orange;}
 .info:nth-child(5) span{background-color: red;}
 
-
-@media screen and (max-width: 769px) {
-  .map{
-    .weather{}
-    .dust{}
-    .maptab{}
-  }
-}
