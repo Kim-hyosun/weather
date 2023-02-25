@@ -3,6 +3,7 @@
 ---
 
 웹사이트 [케이웨더](https://weather.kweather.co.kr/)의 현재, 오늘, 내일, 모래의 날씨와 미세먼지 정보를 보여주는 기능 구현
+최하단 구현 사이트 바로가기 링크있습니다!
 
 # 1.  목표
 
@@ -21,7 +22,10 @@
 > 
 
 > **3.   반응형 작업하기**
-> 
+
+<br/>
+<br/>
+<br/>
 
 # 2.  디렉토리 구조
 
@@ -36,7 +40,9 @@
 
 ![Untitled (1)](https://user-images.githubusercontent.com/113571272/221363012-898fc6af-00fe-47da-bd9e-3b99c280d72a.png)
 
-
+<br/>
+<br/>
+<br/>
 # 3.  사용 기술
 
 ---
@@ -44,7 +50,9 @@
 ### 👍 UI Design  **:  React / axios / JSON / SCSS / Router**
 
 ### 👍 U**sed Tools   :**  GitHub / Visual Studio Code / Figma
-
+<br/>
+<br/>
+<br/>
 # 4.  페이지 구성
 
 ---
@@ -60,6 +68,9 @@
 
 
 </aside>
+<br/>
+<br/>
+<br/>
 
 # 5.  문제 및 해결 과정
 
@@ -194,6 +205,10 @@ setPollution(aqi);
   
 ```
 
+<br/>
+<br/>
+<br/>
+
 # 6.  개인 리뷰
 
 ---
@@ -214,6 +229,10 @@ axios multiple request같은 경우에는 검색을 많이 했다. 모든 블로
 날씨 정보는 데스크탑에서 접근하기보다 모바일 기기에서 접근할 비율이 많은 것으로 생각 되어 모바일에서 보기 편하도록 반응형으로 작업하였다.  
 
 </aside>
+
+<br/>
+<br/>
+<br/>
 
 # 사이트 바로가기
 
