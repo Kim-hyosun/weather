@@ -43,6 +43,7 @@
 <br/>
 <br/>
 <br/>
+
 # 3.  사용 기술
 
 ---
@@ -53,6 +54,7 @@
 <br/>
 <br/>
 <br/>
+
 # 4.  페이지 구성
 
 ---
@@ -234,6 +236,6 @@ axios multiple request같은 경우에는 검색을 많이 했다. 모든 블로
 <br/>
 <br/>
 
-# 사이트 바로가기
+# 작업한 날씨예보 사이트 바로가기
 
-[케이웨더](https://kim-hyosun.github.io/weather/)
+# [날씨와 미세먼지](https://kim-hyosun.github.io/weather/)
