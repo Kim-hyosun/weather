@@ -4,12 +4,16 @@ import MoreDust from "./MoreDust";
 import MoreWeather from "./MoreWeather";
 
 function More() {
-  const data = Forecast();
-  const dustdata = AirforecastMore();
+  const { data } = Forecast();
+  const { data: dustdata, error } = AirforecastMore();
   return (
     <>
       <MoreWeather data={data} />
-      <MoreDust dustdata={dustdata} />
+      {error ? (
+        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
+      ) : (
+        <MoreDust dustdata={dustdata} />
+      )}
     </>
   );
 }

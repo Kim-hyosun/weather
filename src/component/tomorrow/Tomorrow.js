@@ -5,13 +5,16 @@ import TomorrowWeather from "./TomorrowWeather";
 
 
 function Tomorrow() {
-  const data = Forecast();
-  const airforecast = Airforecast();
-  // console.log(airforecast)
+  const { data } = Forecast();
+  const { data: airforecast, error } = Airforecast();
   return (
     <>
       <TomorrowWeather data={data} />
-      <TomorrowDust airforecast={airforecast} />
+      {error ? (
+        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
+      ) : (
+        <TomorrowDust airforecast={airforecast} />
+      )}
     </>
   );
 }

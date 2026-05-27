@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "../../../node_modules/axios/index";
+import axios from "axios";
 
 
 function MoreWeatherDataInfo({cities}) {
@@ -12,7 +12,7 @@ function MoreWeatherDataInfo({cities}) {
   useEffect(() => {
     
     axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?${cities.code}&lang=kr&appid=038d154e9b9e548e27fb2ea1e227aded&units=metric`)
+      .get(`https://api.openweathermap.org/data/2.5/forecast?${cities.code}&lang=kr&appid=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
       .then((res) => {
         setTemp(res.data.list[18].main.temp);
         setIcon(res.data.list[18].weather[0].icon);

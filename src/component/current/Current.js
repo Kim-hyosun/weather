@@ -4,11 +4,15 @@ import Dust from "./Dust";
 import Weather from "./Weather";
 
 function Current() {
-  const currentAir = Air();
+  const { data: currentAir, error } = Air();
   return (
     <>
       <Weather />
-      <Dust currentAir={currentAir} />
+      {error ? (
+        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
+      ) : (
+        <Dust currentAir={currentAir} />
+      )}
     </>
   );
 }
