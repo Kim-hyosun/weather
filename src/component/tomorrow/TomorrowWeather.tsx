@@ -1,11 +1,10 @@
-import { ForecastData } from "../../types";
 import TomorrowWeatherData from "./TomorrowWeatherData";
 import TomorrowWeatherTitle from "./TomorrowWeatherTitle";
 
-function TomorrowWeather({ data }: { data?: ForecastData }) {
+function TomorrowWeather() {
 	return (
 		<div className="weather">
-			<TomorrowWeatherTitle data={data} />
+			<TomorrowWeatherTitle />
 			<TomorrowWeatherData />
 		</div>
 	);

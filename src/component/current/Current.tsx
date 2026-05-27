@@ -1,18 +1,15 @@
-import { Air } from "../../asset/index";
-
 import Dust from "./Dust";
 import Weather from "./Weather";
+import { useCurrentAqi } from "../../hooks/useAqi";
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function Current() {
-  const { data: currentAir, error } = Air();
+  const { data: currentAir, isLoading, isError } = useCurrentAqi();
   return (
     <>
       <Weather />
-      {error ? (
-        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
-      ) : (
-        <Dust currentAir={currentAir} />
-      )}
+      {isLoading ? <Loading /> : isError ? <ErrorMessage /> : <Dust currentAir={currentAir} />}
     </>
   );
 }

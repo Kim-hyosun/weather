@@ -1,38 +1,19 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useCurrentWeather } from "../../hooks/useWeather";
 import { City } from "../../types";
-
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function WeatherDataInfo({ cities }: { cities: City }) {
-	let [temp, setTemp] = useState("");
-	let [icon, setIcon] = useState("");
-	let [description, setDescription] = useState("");
-	let [err, setErr] = useState<string | null>(null);
+	const { data, isLoading, isError } = useCurrentWeather(cities);
 
-	useEffect(() => {
-		axios
-			.get(`https://api.openweathermap.org/data/2.5/weather?${cities.code}&lang=kr&appid=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
-			.then((res) => {
-				setTemp(res.data.main.temp)
-				setIcon(res.data.weather[0].icon)
-				setDescription(res.data.weather[0].description)
-			})
-			.catch((err) => {
-				setErr(err instanceof Error ? err.message : String(err))
-			})
-	}, [cities])
+	if (isLoading) return <Loading />;
+	if (isError || !data) return <ErrorMessage />;
 
 	return (
 		<>
-			{err ? (
-				<div>Error: {err}</div>
-			) : (
-				<>
-			<img src={`http://openweathermap.org/img/wn/${icon}.png`} alt={description} />
-			<div className="temp">{temp}℃</div>
-			<div className="none">{description}</div>
-				</>
-			)}
+			<img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt={data.weather[0].description} />
+			<div className="temp">{data.main.temp}℃</div>
+			<div className="none">{data.weather[0].description}</div>
 		</>
 	);
 }

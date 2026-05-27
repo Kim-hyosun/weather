@@ -1,44 +1,24 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useForecast } from "../../hooks/useWeather";
+import { FORECAST_INDEX } from "../../constants/forecastIndex";
 import { City } from "../../types";
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function TomorrowWeatherDataInfo({ cities }: { cities: City }) {
-  let [temp, setTemp] = useState("");
-	let [icon, setIcon] = useState("");
-	let [feel, setFeel] = useState("");
-	let [des, setDes] = useState("");
-  let [err, setErr] = useState<string | null>(null);
-  
-  
-  useEffect(() => {
-    
-    axios
-      .get(`https://api.openweathermap.org/data/2.5/forecast?${cities.code}&lang=kr&appid=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
-      .then((res) => {
-        setTemp(res.data.list[10].main.temp);
-        setIcon(res.data.list[10].weather[0].icon);
-        setFeel(res.data.list[10].main.feels_like);
-        setDes(res.data.list[10].weather.description);
-      })
-      .catch((err) => {
-        setErr(err instanceof Error ? err.message : String(err));
-      })
-  }, [cities]);
+	const { data, isLoading, isError } = useForecast(cities);
 
+	if (isLoading) return <Loading />;
+	if (isError || !data) return <ErrorMessage />;
 
-  return (
-    <>
-      	{err ? (
-				<div>Error: {err}</div>
-			) : (
-				<>
-				<img src={`http://openweathermap.org/img/wn/${icon ? icon: "loading"}.png`} alt={des} />
-					<div className="temp">{temp ? temp : "loading"}℃</div>
-					<div className="none" style={{whiteSpace:'nowrap'}}>(체감{feel ? feel : "loading"}℃)</div>
-					</>
-			)}
-    </>
-  );
+	const item = data.list[FORECAST_INDEX.tomorrow];
+
+	return (
+		<>
+			<img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt={item.weather[0].description} />
+			<div className="temp">{item.main.temp}℃</div>
+			<div className="none" style={{ whiteSpace: 'nowrap' }}>(체감{item.main.feels_like}℃)</div>
+		</>
+	);
 }
 
 export default TomorrowWeatherDataInfo;

@@ -1,19 +1,16 @@
-import { Forecast,AirforecastMore } from "../../asset/index";
-
 import MoreDust from "./MoreDust";
 import MoreWeather from "./MoreWeather";
+import { useForecastAqi } from "../../hooks/useAqi";
+import { AQI_FORECAST_INDEX } from "../../constants/forecastIndex";
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function More() {
-  const { data } = Forecast();
-  const { data: dustdata, error } = AirforecastMore();
+  const { data: dustdata, isLoading, isError } = useForecastAqi(AQI_FORECAST_INDEX.more);
   return (
     <>
-      <MoreWeather data={data} />
-      {error ? (
-        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
-      ) : (
-        <MoreDust dustdata={dustdata} />
-      )}
+      <MoreWeather />
+      {isLoading ? <Loading /> : isError ? <ErrorMessage /> : <MoreDust dustdata={dustdata} />}
     </>
   );
 }

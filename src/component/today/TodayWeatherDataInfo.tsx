@@ -1,42 +1,22 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useForecast } from "../../hooks/useWeather";
+import { FORECAST_INDEX } from "../../constants/forecastIndex";
 import { City } from "../../types";
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function TodayWeatherDataInfo({ cities }: { cities: City }) {
-	let [tempMin, setTempMin] = useState("");
-	let [tempMax, setTempMax] = useState("");
-	let [icon, setIcon] = useState("");
-	let [feel, setFeel] = useState("");
-	let [des, setDes] = useState("");
-	let [err, setErr] = useState<string | null>(null);
+	const { data, isLoading, isError } = useForecast(cities);
 
-  useEffect(() => {
-    
-		axios
-			.get(`https://api.openweathermap.org/data/2.5/forecast?${cities.code}&lang=kr&appid=${process.env.REACT_APP_OW_API_KEY}&units=metric`)
-			.then((res) => {
-        setTempMin(res.data.list[0].main.temp_min);
-        setIcon(res.data.list[0].weather[0].icon);
-        setTempMax(res.data.list[0].main.temp_max);
-        setFeel(res.data.list[0].main.feels_like);
-        setDes(res.data.list[0].weather.description);
-			})
-			.catch((err) => {
-        setErr(err instanceof Error ? err.message : String(err));
-			})
-	}, [cities])
+	if (isLoading) return <Loading />;
+	if (isError || !data) return <ErrorMessage />;
+
+	const item = data.list[FORECAST_INDEX.today];
 
 	return (
 		<>
-			{err ? (
-				<div>Error: {err}</div>
-			) : (
-				<>
-				<img src={`http://openweathermap.org/img/wn/${icon ? icon: "loading"}.png`} alt={des} />
-					<div className="temp">{tempMin ? tempMin : "loading"}/{tempMax ? tempMax : "loading"}℃</div>
-					<div className="none" style={{whiteSpace:'nowrap'}}>(체감{feel ? feel : "loading"}℃)</div>
-					</>
-			)}
+			<img src={`https://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt={item.weather[0].description} />
+			<div className="temp">{item.main.temp_min}/{item.main.temp_max}℃</div>
+			<div className="none" style={{ whiteSpace: 'nowrap' }}>(체감{item.main.feels_like}℃)</div>
 		</>
 	);
 }

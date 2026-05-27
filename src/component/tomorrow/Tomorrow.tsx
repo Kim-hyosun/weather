@@ -1,20 +1,16 @@
-import { Forecast, Airforecast } from "../../asset/index";
 import TomorrowDust from "./TomorrowDust";
 import TomorrowWeather from "./TomorrowWeather";
-
-
+import { useForecastAqi } from "../../hooks/useAqi";
+import { AQI_FORECAST_INDEX } from "../../constants/forecastIndex";
+import Loading from "../../shared/Loading";
+import ErrorMessage from "../../shared/Error";
 
 function Tomorrow() {
-  const { data } = Forecast();
-  const { data: airforecast, error } = Airforecast();
+  const { data: airforecast, isLoading, isError } = useForecastAqi(AQI_FORECAST_INDEX.tomorrow);
   return (
     <>
-      <TomorrowWeather data={data} />
-      {error ? (
-        <div className="dataError">미세먼지 정보를 불러오지 못했습니다.</div>
-      ) : (
-        <TomorrowDust airforecast={airforecast} />
-      )}
+      <TomorrowWeather />
+      {isLoading ? <Loading /> : isError ? <ErrorMessage /> : <TomorrowDust airforecast={airforecast} />}
     </>
   );
 }
