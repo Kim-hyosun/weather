@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { City } from "../../types";
 
-function TodayWeatherDataInfo({ cities }) {
+function TodayWeatherDataInfo({ cities }: { cities: City }) {
 	let [tempMin, setTempMin] = useState("");
 	let [tempMax, setTempMax] = useState("");
 	let [icon, setIcon] = useState("");
 	let [feel, setFeel] = useState("");
 	let [des, setDes] = useState("");
-	let [err, setErr] = useState(null);
+	let [err, setErr] = useState<string | null>(null);
 
   useEffect(() => {
     
@@ -21,7 +22,7 @@ function TodayWeatherDataInfo({ cities }) {
         setDes(res.data.list[0].weather.description);
 			})
 			.catch((err) => {
-        setErr(err.message);
+        setErr(err instanceof Error ? err.message : String(err));
 			})
 	}, [cities])
 

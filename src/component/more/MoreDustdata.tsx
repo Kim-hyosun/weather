@@ -1,5 +1,5 @@
 
-function MoreDustdata({dustdata}) {
+function MoreDustdata({ dustdata }: { dustdata: number[] }) {
 	return (
 		<div className="dustMap">
 

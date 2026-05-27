@@ -1,7 +1,8 @@
+import { ForecastData } from "../../types";
 import MoreWeatherData from "./MoreWeatherData";
 import MoreWeatherTitle from "./MoreWeatherTitle";
 
-function MoreWeather({ data }) {
+function MoreWeather({ data }: { data?: ForecastData }) {
 	return (
 		<div className="weather">
 			<MoreWeatherTitle data={data} />

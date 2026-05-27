@@ -1,5 +1,12 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
+import { ForecastData } from '../types';
+
+interface FetchState<T> {
+  data: T;
+  isLoading: boolean;
+  error: string | null;
+}
 
 const API_KEY = process.env.REACT_APP_OW_API_KEY;
 const BASE = 'https://api.openweathermap.org/data/2.5';
@@ -45,8 +52,16 @@ const AIR_COORDS = [
 ];
 
 // 여러 URL을 병렬 요청하고 transform으로 가공한 결과를 반환하는 공통 훅
-const useFetchAll = (urls, transform) => {
-  const [state, setState] = useState({ data: [], isLoading: true, error: null });
+const useFetchAll = <T,>(
+  urls: string[],
+  transform: (responses: AxiosResponse[]) => T,
+  initialData: T,
+): FetchState<T> => {
+  const [state, setState] = useState<FetchState<T>>({
+    data: initialData,
+    isLoading: true,
+    error: null,
+  });
 
   useEffect(() => {
     let active = true;
@@ -55,7 +70,13 @@ const useFetchAll = (urls, transform) => {
         if (active) setState({ data: transform(res), isLoading: false, error: null });
       })
       .catch((err) => {
-        if (active) setState({ data: [], isLoading: false, error: err.message });
+        if (active) {
+          setState({
+            data: initialData,
+            isLoading: false,
+            error: err instanceof Error ? err.message : String(err),
+          });
+        }
       });
     return () => {
       active = false;
@@ -70,15 +91,18 @@ const useFetchAll = (urls, transform) => {
 const forecastUrls = () =>
   FORECAST_REGIONS.map((q) => `${BASE}/forecast?${q}&lang=kr&appid=${API_KEY}&units=metric`);
 
-const airUrls = (path) => AIR_COORDS.map((c) => `${BASE}/${path}?${c}&appid=${API_KEY}`);
+const airUrls = (path: string) => AIR_COORDS.map((c) => `${BASE}/${path}?${c}&appid=${API_KEY}`);
 
 // 응답 배열에서 각 지역의 list[idx] aqi만 추출
-const pickAqi = (idx) => (res) => res.map((r) => r.data.list[idx].main.aqi);
+const pickAqi = (idx: number) => (res: AxiosResponse[]): number[] =>
+  res.map((r) => r.data.list[idx].main.aqi);
 
-export const Forecast = () => useFetchAll(forecastUrls(), (res) => res); // 날씨 예보
+export const Forecast = () => useFetchAll<ForecastData>(forecastUrls(), (res) => res, []); // 날씨 예보
 
-export const Air = () => useFetchAll(airUrls('air_pollution'), pickAqi(0)); // 현재 미세먼지
+export const Air = () => useFetchAll<number[]>(airUrls('air_pollution'), pickAqi(0), []); // 현재 미세먼지
 
-export const Airforecast = () => useFetchAll(airUrls('air_pollution/forecast'), pickAqi(19)); // 내일 예보
+export const Airforecast = () =>
+  useFetchAll<number[]>(airUrls('air_pollution/forecast'), pickAqi(19), []); // 내일 예보
 
-export const AirforecastMore = () => useFetchAll(airUrls('air_pollution/forecast'), pickAqi(38)); // 모레 예보
+export const AirforecastMore = () =>
+  useFetchAll<number[]>(airUrls('air_pollution/forecast'), pickAqi(38), []); // 모레 예보

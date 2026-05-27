@@ -1,5 +1,5 @@
 
-function TodayDustdata({currentAir}) {
+function TodayDustdata({ currentAir }: { currentAir: number[] }) {
 	return (
 		<div className="dustMap">
 

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { City } from "../../types";
 
 
-function WeatherDataInfo({ cities }) {
+function WeatherDataInfo({ cities }: { cities: City }) {
 	let [temp, setTemp] = useState("");
 	let [icon, setIcon] = useState("");
 	let [description, setDescription] = useState("");
-	let [err, setErr] = useState(null);
+	let [err, setErr] = useState<string | null>(null);
 
 	useEffect(() => {
 		axios
@@ -17,7 +18,7 @@ function WeatherDataInfo({ cities }) {
 				setDescription(res.data.weather[0].description)
 			})
 			.catch((err) => {
-				setErr(err.message)
+				setErr(err instanceof Error ? err.message : String(err))
 			})
 	}, [cities])
 

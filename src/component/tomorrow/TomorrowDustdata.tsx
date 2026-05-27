@@ -1,5 +1,5 @@
 
-function TomorrowDustdata({airforecast}) {
+function TomorrowDustdata({ airforecast }: { airforecast: number[] }) {
 	return (
 		<div className="dustMap">
 

@@ -1,5 +1,7 @@
 
-function TomorrowWeatherTitle({ data }) {
+import { ForecastData } from "../../types";
+
+function TomorrowWeatherTitle({ data }: { data?: ForecastData }) {
 	return (
 		<div className="maptitle">
 			<span className="title">내일의 날씨예보</span>

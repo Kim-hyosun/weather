@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 
-const root = ReactDOM.createRoot(document.getElementById('wrap'));
+const root = ReactDOM.createRoot(document.getElementById('wrap') as HTMLElement);
 root.render(
   
   <BrowserRouter basename={process.env.PUBLIC_URL}>

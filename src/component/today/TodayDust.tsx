@@ -2,7 +2,7 @@ import DustInfo from "../DustInfo";
 import TodayDustdata from "./TodayDustdata";
 import TodayDustTitle from "./TodayDustTitle";
 
-function TodayDust({currentAir}) {
+function TodayDust({ currentAir }: { currentAir: number[] }) {
 	return (
 		<div className="dust">
 			<TodayDustTitle />

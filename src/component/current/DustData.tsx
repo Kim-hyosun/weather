@@ -1,6 +1,6 @@
 
 
-function DustData({ currentAir }) {
+function DustData({ currentAir }: { currentAir: number[] }) {
   return (
     <div className="dustMap">
 

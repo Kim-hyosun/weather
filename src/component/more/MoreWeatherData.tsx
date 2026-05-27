@@ -1,6 +1,7 @@
+import { ForecastData } from "../../types";
 import MoreWeatherDataInfo from "./MoreWeatherDataInfo";
 
-function MoreWeatherData({ data }) {
+function MoreWeatherData({ data }: { data?: ForecastData }) {
 	const cities = [
     { id: 1, name: `서해5도`, code: "id=1843163", },
     { id: 2, name: `서울경기`, code: "id=1835848", },

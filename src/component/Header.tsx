@@ -8,7 +8,7 @@ function Header() {
         <h1 className="logo1">케이웨더로고</h1>
         <h1 className="logo2">날씨와 미세먼지</h1>
       </div>
-      <Link className="homeBtn">케이웨더 홈</Link>
+      <Link to="/" className="homeBtn">케이웨더 홈</Link>
     </header>
   );
 }
